@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plastic Change | Challenges</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="challenge-page">
+
+        <div class="challenge-map">
+
+            <!-- BAGGRUND -->
+            <img
+                src="assets/strand-vand.png"
+                alt=""
+                class="challenge-map__background"
+            >
+
+            <!-- POINT OG STREAK -->
+            <div class="challenge-map__stats">
+
+                <div class="challenge-map__stat">
+                    <span class="challenge-map__star" aria-hidden="true">★</span>
+
+                    <div class="challenge-map__stat-text">
+                        <span
+                            class="challenge-map__value"
+                            id="user-points"
+                        >0</span>
+                        <span class="challenge-map__label">Point</span>
+                    </div>
+                </div>
+
+                <div class="challenge-map__stat">
+                    <svg
+                        class="challenge-map__flame"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 22c4.4 0 7.5-3.1 7.5-7.3 0-3.1-1.7-5.3-4.4-7.9.1 2.8-1 4.2-2.2 4.7C13.4 6.9 12 4.4 9.2 2c.3 3.6-1.1 5.7-3 8.1C4.7 12.1 4 14 4 16c0 3.5 3.1 6 8 6z"/>
+                    </svg>
+
+                    <div class="challenge-map__stat-text">
+                        <span
+                            class="challenge-map__value"
+                            id="user-streak"
+                        >0</span>
+                        <span class="challenge-map__label">Streak</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- GENBRUGELIGT LÅSEIKON -->
+            <svg
+                class="challenge-map__svg-definitions"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <defs>
+                    <symbol id="challenge-lock" viewBox="0 0 24 24">
+                        <path d="M7 10V7a5 5 0 0 1 10 0v3"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="3"/>
+                        <rect x="4" y="9" width="16" height="13" rx="2"
+                              fill="currentColor"/>
+                        <path d="M12 14v4"
+                              stroke="#858993"
+                              stroke-width="2"
+                              stroke-linecap="round"/>
+                    </symbol>
+                </defs>
+            </svg>
+
+            <!-- DAG 1 -->
+            <button
+                type="button"
+                class="challenge-day challenge-day--1"
+                aria-label="Start challenge for dag 1"
+                data-day="1"
+            >
+                <span class="challenge-day__number">1</span>
+            </button>
+
+            <!-- DAG 2 -->
+<!-- DAG 2 -->
+<button
+    type="button"
+    class="challenge-day challenge-day--locked challenge-day--2"
+    aria-label="Dag 2, låst"
+    data-day="2"
+    aria-controls="day-2-message"
+    aria-expanded="false"
+>
+    <svg class="challenge-day__lock" aria-hidden="true">
+        <use href="#challenge-lock"></use>
+    </svg>
+
+    <span class="challenge-day__number">2</span>
+</button>
+
+<!-- BESKED VED DAG 2 -->
+<div class="locked-message" id="day-2-message" role="status" hidden>
+    <strong class="locked-message__title">Dag 2</strong>
+
+    <svg class="locked-message__lock" aria-hidden="true">
+        <use href="#challenge-lock"></use>
+    </svg>
+
+    <p class="locked-message__text">Lås op i morgen</p>
+</div>
+            </button>
+
+            <!-- DAG 3 -->
+            <button
+                type="button"
+                class="challenge-day challenge-day--locked challenge-day--3"
+                aria-label="Dag 3, låst"
+                data-day="3"
+            >
+                <svg class="challenge-day__lock" aria-hidden="true">
+                    <use href="#challenge-lock"></use>
+                </svg>
+                <span class="challenge-day__number">3</span>
+            </button>
+
+            <!-- DAG 4 -->
+            <button
+                type="button"
+                class="challenge-day challenge-day--locked challenge-day--4"
+                aria-label="Dag 4, låst"
+                data-day="4"
+            >
+                <svg class="challenge-day__lock" aria-hidden="true">
+                    <use href="#challenge-lock"></use>
+                </svg>
+                <span class="challenge-day__number">4</span>
+            </button>
+
+            <!-- DAG 5 -->
+            <button
+                type="button"
+                class="challenge-day challenge-day--locked challenge-day--5"
+                aria-label="Dag 5, låst"
+                data-day="5"
+            >
+                <svg class="challenge-day__lock" aria-hidden="true">
+                    <use href="#challenge-lock"></use>
+                </svg>
+                <span class="challenge-day__number">5</span>
+            </button>
+
+            <!-- DAG 6 -->
+            <button
+                type="button"
+                class="challenge-day challenge-day--locked challenge-day--6"
+                aria-label="Dag 6, låst"
+                data-day="6"
+            >
+                <svg class="challenge-day__lock" aria-hidden="true">
+                    <use href="#challenge-lock"></use>
+                </svg>
+                <span class="challenge-day__number">6</span>
+            </button>
+
+            <!-- DAG 7 -->
+            <button
+                type="button"
+                class="challenge-day challenge-day--locked challenge-day--7"
+                aria-label="Dag 7, låst"
+                data-day="7"
+            >
+                <svg class="challenge-day__lock" aria-hidden="true">
+                    <use href="#challenge-lock"></use>
+                </svg>
+                <span class="challenge-day__number">7</span>
+            </button>
+
+            <!-- SKILDPADDE -->
+            <img
+                src="assets/skildpadde.png"
+                alt="Skildpadde ved starten af challenge-stien"
+                class="challenge-map__turtle"
+            >
+
+        </div>
+
+    </main>
+
+    <!-- POPUP TIL DAG 1 -->
+<!-- POPUP TIL DAG 1 -->
+<dialog
+    class="challenge-modal"
+    id="day-1-modal"
+    aria-labelledby="day-1-title"
+>
+    <button
+        type="button"
+        class="challenge-modal__close"
+        aria-label="Luk popup"
+        autofocus
+    >×</button>
+
+    <p class="challenge-modal__day">Dag 1</p>
+
+    <div
+        class="challenge-modal__steps"
+        role="img"
+        aria-label="Trin 1 af 4"
+    >
+        <span class="challenge-modal__dot challenge-modal__dot--active"></span>
+        <span class="challenge-modal__dot"></span>
+        <span class="challenge-modal__dot"></span>
+        <span class="challenge-modal__dot"></span>
+    </div>
+
+    <h1 class="challenge-modal__title" id="day-1-title">
+        Dagens challenge
+    </h1>
+
+    <!-- TRIN 1: INTRODUKTION -->
+    <div class="challenge-modal__panel" data-step="1">
+
+        <img
+            src="assets/flaske.svg"
+            alt=""
+            class="challenge-modal__image"
+        >
+
+        <h2 class="challenge-modal__subtitle">
+            Brug en genanvendelig<br>
+            vandflaske i dag
+        </h2>
+
+        <p class="challenge-modal__text">
+            Undgå engangsflaske, og fyld i stedet din egen flaske.
+            Det er en super nem handling, der gør en forskel.
+        </p>
+
+        <button
+            type="button"
+            class="challenge-modal__button"
+            id="day-1-ready"
+        >
+            Jeg er klar
+        </button>
+
+    </div>
+
+    <!-- TRIN 2: KAMERA -->
+    <div class="challenge-modal__panel" data-step="2" hidden>
+
+        <p class="challenge-modal__instruction">
+            Tag et billede af din genanvendelige vandflaske
+            for at gennemføre challengen.
+        </p>
+
+        <img
+            src="assets/kamera.svg"
+            alt=""
+            class="challenge-modal__camera"
+        >
+
+        <button
+            type="button"
+            class="challenge-modal__button"
+            id="open-camera"
+        >
+            Åben kamera
+        </button>
+
+    </div>
+
+    <!-- TRIN 3: GODKEND BILLEDE -->
+    <div class="challenge-modal__panel" data-step="3" hidden>
+
+        <p class="challenge-modal__instruction">
+            Er du sikker på, at du vil bruge dette billede?
+        </p>
+
+        <img
+            alt="Dit billede til dagens challenge"
+            class="challenge-modal__preview"
+            id="challenge-photo-preview"
+            hidden
+        >
+
+        <button
+            type="button"
+            class="challenge-modal__button"
+            id="confirm-challenge-photo"
+        >
+            Ja, brug dette billede
+        </button>
+
+        <button
+            type="button"
+            class="challenge-modal__retake"
+            id="retake-challenge-photo"
+        >
+            Tag et nyt billede
+        </button>
+
+    </div>
+
+    <!-- TRIN 4: CHALLENGE GENNEMFØRT -->
+<div class="challenge-modal__panel" data-step="4" hidden>
+
+    <img
+        src="assets/challenge-gennemført.svg"
+        alt=""
+        class="challenge-modal__completed-icon"
+    >
+
+    <p class="challenge-modal__completed-text">
+        Tak fordi du er med til at gøre en forskel &lt;3<br>
+        Nu kan du teste din viden og optjene flere point.
+    </p>
+
+    <div class="challenge-modal__quiz-info">
+        <p>
+            Svar på 3 korte spørgsmål om plastik,
+            og optjen + 25 point.
+        </p>
+    </div>
+
+    <button
+        type="button"
+        class="challenge-modal__button challenge-modal__quiz-button"
+        id="start-challenge-quiz"
+    >
+        Tag quizzen
+        <span aria-hidden="true">→</span>
+    </button>
+
+    <button
+        type="button"
+        class="challenge-modal__retake"
+        id="skip-challenge-quiz"
+    >
+        Nej tak
+    </button>
+
+</div>
+
+<!-- QUIZ: SPØRGSMÅL 1 -->
+<div class="challenge-modal__panel" data-step="5" hidden>
+
+    <p class="challenge-quiz__counter">Spørgsmål 1 af 3</p>
+
+    <progress
+        class="challenge-quiz__progress"
+        value="1"
+        max="3"
+        aria-label="Spørgsmål 1 af 3"
+    ></progress>
+
+    <h2 class="challenge-quiz__question">
+        Hvor meget plastik producerer vi hvert år?
+    </h2>
+
+    <div class="challenge-quiz__answers">
+
+        <button type="button" class="challenge-quiz__answer" data-answer="A">
+            <span class="challenge-quiz__letter">A</span>
+            <span>400 mio. tons</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="B">
+            <span class="challenge-quiz__letter">B</span>
+            <span>103 mio. tons</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="C">
+            <span class="challenge-quiz__letter">C</span>
+            <span>60 mio. tons</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="D">
+            <span class="challenge-quiz__letter">D</span>
+            <span>10 mio. tons</span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- QUIZ: SPØRGSMÅL 2 -->
+<div class="challenge-modal__panel" data-step="6" hidden>
+
+    <p class="challenge-quiz__counter">Spørgsmål 2 af 3</p>
+
+    <progress
+        class="challenge-quiz__progress"
+        value="2"
+        max="3"
+        aria-label="Spørgsmål 2 af 3"
+    ></progress>
+
+    <h2 class="challenge-quiz__question">
+        Hvad sker der typisk med plastikflasker,
+        der ikke bliver genanvendt?
+    </h2>
+
+    <div class="challenge-quiz__answers">
+
+        <button type="button" class="challenge-quiz__answer" data-answer="A">
+            <span class="challenge-quiz__letter">A</span>
+            <span>De brændes</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="B">
+            <span class="challenge-quiz__letter">B</span>
+            <span>Ender i naturen</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="C">
+            <span class="challenge-quiz__letter">C</span>
+            <span>De opløses i vand</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="D">
+            <span class="challenge-quiz__letter">D</span>
+            <span>Bliver til nye flasker</span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- QUIZ: SPØRGSMÅL 3 -->
+<div class="challenge-modal__panel" data-step="7" hidden>
+
+    <p class="challenge-quiz__counter">Spørgsmål 3 af 3</p>
+
+    <progress
+        class="challenge-quiz__progress"
+        value="3"
+        max="3"
+        aria-label="Spørgsmål 3 af 3"
+    ></progress>
+
+    <h2 class="challenge-quiz__question">
+        Hvad kan du selv gøre for at reducere plastikforurening?
+    </h2>
+
+    <div class="challenge-quiz__answers">
+
+        <button type="button" class="challenge-quiz__answer" data-answer="A">
+            <span class="challenge-quiz__letter">A</span>
+            <span>Købe mere emballage</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="B">
+            <span class="challenge-quiz__letter">B</span>
+            <span>Bruge engangsprodukter</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="C">
+            <span class="challenge-quiz__letter">C</span>
+            <span>Bruge genanvendelige produkter</span>
+        </button>
+
+        <button type="button" class="challenge-quiz__answer" data-answer="D">
+            <span class="challenge-quiz__letter">D</span>
+            <span>Man kan ikke gøre noget</span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- QUIZRESULTAT: ALLE SVAR RIGTIGE -->
+<div class="challenge-modal__panel" data-step="8" hidden>
+
+    <img
+        src="assets/pokal.svg"
+        alt=""
+        class="challenge-modal__completed-icon"
+    >
+
+    <p class="challenge-result__text">
+        Du har svaret 3 ud af 3 spørgsmål rigtigt
+    </p>
+
+    <div class="challenge-result__reward">
+        <span class="challenge-result__star" aria-hidden="true">★</span>
+
+        <div>
+            <strong class="challenge-result__points">+ 25 Point</strong>
+            <p class="challenge-result__label">(Quiz)</p>
+        </div>
+    </div>
+
+    <button
+        type="button"
+        class="challenge-modal__button challenge-modal__quiz-button"
+        id="quiz-result-next"
+    >
+        Videre
+        <span aria-hidden="true">→</span>
+    </button>
+
+</div>
+
+<!-- SAMLET BELØNNING EFTER TRE RIGTIGE -->
+<div class="challenge-modal__panel" data-step="9" hidden>
+
+    <img
+        src="assets/pokal.svg"
+        alt=""
+        class="challenge-modal__completed-icon"
+    >
+
+    <p class="challenge-result__text">
+        Du har gennemført dagens challenge og quiz.
+    </p>
+
+    <div class="challenge-summary">
+
+        <div class="challenge-summary__row">
+            <span class="challenge-summary__star" aria-hidden="true">★</span>
+            <span>+ 50 point (Challenge)</span>
+        </div>
+
+        <div class="challenge-summary__row">
+            <span class="challenge-summary__star" aria-hidden="true">★</span>
+            <span>+ 25 point (Quiz)</span>
+        </div>
+
+        <div class="challenge-summary__row challenge-summary__row--total">
+            <span>I alt</span>
+            <strong>75 point</strong>
+        </div>
+
+    </div>
+
+    <a
+        href="shop.html"
+        class="challenge-modal__button challenge-modal__quiz-button challenge-summary__shop"
+    >
+        Til shoppen
+        <span aria-hidden="true">→</span>
+    </a>
+
+</div>
+
+    <!-- TELEFONENS KAMERA / BILLEDVÆLGER -->
+    <input
+        type="file"
+        id="challenge-photo-input"
+        accept="image/*"
+        capture="environment"
+        hidden
+    >
+
+    <p
+        class="challenge-modal__error"
+        id="challenge-photo-error"
+        role="alert"
+        hidden
+    ></p>
+
+</dialog> 
+
+    <!-- BUNDNAVIGATION -->
+    <nav class="bottom-nav" aria-label="Primær navigation">
+
+        <a href="index.html"
+           class="bottom-nav__link"
+           aria-label="Forside">
+            <img src="assets/Home-icon.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+        <a href="challenge.html"
+           class="bottom-nav__link"
+           aria-label="Challenges"
+           aria-current="page">
+            <img src="assets/Challenge-icon-fremhævet.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+        <a href="search.html"
+           class="bottom-nav__link"
+           aria-label="Søg">
+            <img src="assets/Search-icon.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+        <a href="shop.html"
+           class="bottom-nav__link"
+           aria-label="Shop">
+            <img src="assets/Shop-icon.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+        <a href="profil.html"
+           class="bottom-nav__link"
+           aria-label="Profil">
+            <img src="assets/Profile-icon.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+    </nav>
+
+</body>
+</html>

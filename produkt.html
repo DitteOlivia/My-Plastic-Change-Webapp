@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plastic Change | Tee Plastic Change</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="produkt.js" defer></script>
+</head>
+
+<body>
+
+    <main class="product-page">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar__stats">
+
+                <div class="topbar__stat">
+                    <span class="topbar__icon" aria-hidden="true">★</span>
+                    <span class="topbar__value" id="user-points">0</span>
+                </div>
+
+                <div class="topbar__stat">
+                    <svg
+                        class="topbar__flame"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 22c4.4 0 7.5-3.1 7.5-7.3 0-3.1-1.7-5.3-4.4-7.9.1 2.8-1 4.2-2.2 4.7C13.4 6.9 12 4.4 9.2 2c.3 3.6-1.1 5.7-3 8.1C4.7 12.1 4 14 4 16c0 3.5 3.1 6 8 6z"/>
+                    </svg>
+
+                    <span class="topbar__value" id="user-streak">0</span>
+                </div>
+
+            </div>
+
+            <a href="index.html" class="topbar__logo">
+                <img
+                    src="assets/plastic-change-logo.png"
+                    alt="My Plastic Change"
+                    class="topbar__logo-image"
+                >
+            </a>
+
+        </header>
+
+        <!-- KURV -->
+        <div class="product-page__cart-row">
+
+            <svg
+                class="product-page__cart"
+                viewBox="0 0 32 32"
+                role="img"
+                aria-label="Indkøbskurv"
+            >
+                <path
+                    d="M3 5h4l4 16h15l3-12H8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+                <circle
+                    cx="13"
+                    cy="27"
+                    r="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+
+                <circle
+                    cx="25"
+                    cy="27"
+                    r="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+            </svg>
+
+        </div>
+
+        <!-- PRODUKTBILLEDER MED SWIPE -->
+        <div class="product-page__gallery">
+
+            <a
+                href="shop.html"
+                class="product-page__back"
+                aria-label="Tilbage til shoppen"
+            >‹</a>
+
+            <div
+                class="product-gallery"
+                id="product-gallery"
+                tabindex="0"
+                role="region"
+                aria-label="Produktbilleder. Swipe eller scroll vandret."
+            >
+
+                <img
+                    src="assets/tee.png"
+                    alt="Blå Plastic Change T-shirt set forfra"
+                    class="product-gallery__image"
+                >
+
+                <img
+                    src="assets/tee1.jpeg"
+                    alt="Ekstra billede af Plastic Change T-shirten"
+                    class="product-gallery__image"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="product-page__content">
+
+            <!-- KARRUSELPRIKKER -->
+            <div
+                class="product-page__dots"
+                aria-label="Vælg produktbillede"
+            >
+
+                <button
+                    type="button"
+                    class="product-page__dot product-page__dot--active"
+                    data-image-index="0"
+                    aria-label="Vis billede 1"
+                    aria-current="true"
+                    aria-controls="product-gallery"
+                ></button>
+
+                <button
+                    type="button"
+                    class="product-page__dot"
+                    data-image-index="1"
+                    aria-label="Vis billede 2"
+                    aria-controls="product-gallery"
+                ></button>
+
+            </div>
+
+            <!-- PRODUKTNAVN OG PRIS -->
+            <h1 class="product-page__title">
+                Tee “Plastic Change”
+            </h1>
+
+            <p class="product-page__price">
+                1000 point
+            </p>
+
+            <!-- STØRRELSESVALG -->
+            <fieldset class="product-sizes">
+
+                <legend class="product-page__sr-only">
+                    Vælg størrelse
+                </legend>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="XS">
+                    <span>XS</span>
+                </label>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="S">
+                    <span>S</span>
+                </label>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="M">
+                    <span>M</span>
+                </label>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="L">
+                    <span>L</span>
+                </label>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="XL">
+                    <span>XL</span>
+                </label>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="XXL">
+                    <span>XXL</span>
+                </label>
+
+                <label class="product-sizes__option">
+                    <input type="radio" name="product-size" value="XXXL">
+                    <span>XXXL</span>
+                </label>
+
+            </fieldset>
+
+            <!-- TILFØJ TIL KURV -->
+            <button
+                type="button"
+                class="product-page__button"
+                id="add-product-to-cart"
+            >
+                Tilføj til kurv
+            </button>
+
+            <p
+                id="product-message"
+                class="product-page__message"
+                role="status"
+                hidden
+            ></p>
+
+            <!-- PRODUKTEGENSKABER -->
+            <ul class="product-features">
+
+                <li>
+                    <span aria-hidden="true">♧</span>
+                    100% økologisk bomuld
+                </li>
+
+                <li>
+                    <span aria-hidden="true">◇</span>
+                    Normal pasform
+                </li>
+
+                <li>
+                    <span aria-hidden="true">♧</span>
+                    Unisex
+                </li>
+
+                <li>
+                    <span
+                        class="product-features__stock"
+                        aria-hidden="true"
+                    >✓</span>
+                    På lager
+                </li>
+
+            </ul>
+
+            <!-- PRODUKTINFORMATION -->
+            <div class="product-information">
+
+                <details class="product-information__item">
+                    <summary>Om produktet</summary>
+
+                    <p>
+                        Blå unisex T-shirt med Plastic Change-logo.
+                        Fremstillet i 100% økologisk bomuld med normal pasform.
+                    </p>
+                </details>
+
+                <details class="product-information__item">
+                    <summary>Størrelsesguide</summary>
+
+                    <p>
+                        Vælg mellem XS, S, M, L, XL, XXL og XXXL.
+                        En guide med præcise mål tilføjes senere.
+                    </p>
+                </details>
+
+                <details class="product-information__item">
+                    <summary>Levering &amp; betaling</summary>
+
+                    <p>
+                        Produktet koster 1000 point.
+                        Oplysninger om levering tilføjes senere.
+                    </p>
+                </details>
+
+                <details class="product-information__item">
+                    <summary>Har du spørgsmål?</summary>
+
+                    <p>
+                        Kontakt Plastic Change, hvis du har spørgsmål
+                        til produktet.
+                    </p>
+                </details>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- POPUP: MANGLENDE POINT -->
+    <dialog
+        class="product-dialog"
+        id="missing-points-dialog"
+        aria-labelledby="missing-points-title"
+        aria-describedby="missing-points-text missing-points-help"
+    >
+
+        <button
+            type="button"
+            class="product-dialog__close"
+            id="close-points-dialog"
+            aria-label="Luk popup"
+        >×</button>
+
+        <span class="product-dialog__star" aria-hidden="true">★</span>
+
+        <h2
+            id="missing-points-title"
+            class="product-dialog__title"
+        >
+            Du mangler point
+        </h2>
+
+        <p
+            id="missing-points-text"
+            class="product-dialog__text"
+        ></p>
+
+        <p
+            id="missing-points-help"
+            class="product-dialog__text"
+        >
+            Gennemfør flere challenges og optjen flere point.
+        </p>
+
+        <a href="challenge.html" class="product-page__button">
+            Til challenges
+        </a>
+
+        <button
+            type="button"
+            class="product-dialog__cancel"
+            id="cancel-points-dialog"
+            autofocus
+        >
+            Luk
+        </button>
+
+    </dialog>
+
+    <!-- BUNDNAVIGATION -->
+    <nav class="bottom-nav" aria-label="Primær navigation">
+
+        <a
+            href="index.html"
+            class="bottom-nav__link"
+            aria-label="Forside"
+        >
+            <img
+                src="assets/Home-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a
+            href="challenge.html"
+            class="bottom-nav__link"
+            aria-label="Challenges"
+        >
+            <img
+                src="assets/Challenge-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a
+            href="search.html"
+            class="bottom-nav__link"
+            aria-label="Søg"
+        >
+            <img
+                src="assets/Search-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a
+            href="shop.html"
+            class="bottom-nav__link"
+            aria-label="Shop"
+            aria-current="location"
+        >
+            <img
+                src="assets/Shop-icon-fremhævet.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a
+            href="profil.html"
+            class="bottom-nav__link"
+            aria-label="Profil"
+        >
+            <img
+                src="assets/Profile-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+    </nav>
+
+</body>
+</html>

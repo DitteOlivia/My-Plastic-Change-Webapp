@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <title>Plastic Change | Forside</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="home">
+
+
+<!-- TOPBAR -->
+<header class="topbar">
+
+    <!-- Point og streak -->
+    <div class="topbar__stats">
+
+        <!-- Point -->
+        <div class="topbar__stat">
+            <span class="topbar__icon" aria-hidden="true">★</span>
+            <span class="topbar__value" id="user-points">0</span>
+        </div>
+
+        <!-- Streak -->
+        <div class="topbar__stat">
+            <svg
+                class="topbar__flame"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M12 22c4.4 0 7.5-3.1 7.5-7.3 0-3.1-1.7-5.3-4.4-7.9.1 2.8-1 4.2-2.2 4.7C13.4 6.9 12 4.4 9.2 2c.3 3.6-1.1 5.7-3 8.1C4.7 12.1 4 14 4 16c0 3.5 3.1 6 8 6z"/>
+            </svg>
+            <span class="topbar__value" id="user-streak">0</span>
+        </div>
+
+    </div>
+
+    <!-- Dit PNG-logo -->
+    <a href="index.html" class="topbar__logo">
+        <img
+            src="assets/plastic-change-logo.png"
+            alt="My Plastic Change"
+            class="topbar__logo-image"
+        >
+    </a>
+
+</header>
+
+
+        <!-- HERO-SEKTION -->
+        <section class="hero" aria-label="Velkommen">
+
+            <img
+                class="hero__image"
+                src="assets/hero-turtle.jpg"
+                alt="Havskildpadde, der svømmer i havet"
+            >
+
+            <div class="hero__welcome">
+
+                <!-- Pink tekstboks -->
+                <div class="hero__welcome-content">
+
+                    <h1 class="hero__title">
+                        Hej Katrine!
+                    </h1>
+
+                    <p class="hero__text">
+                        Hold din plastikfri streak kørende og
+                        udfør dagens challenge, så du kan
+                        optjene flere point.
+                    </p>
+
+                </div>
+
+                <!-- Separat rund knap -->
+                <a
+                    href="challenge.html"
+                    class="hero__button"
+                    aria-label="Gå til dagens challenge"
+                >
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- STØT PLASTIC CHANGE -->
+        <section
+            class="challenges"
+            aria-labelledby="challenges-title"
+        >
+
+            <h2
+                class="section-title"
+                id="challenges-title"
+            >
+                Beskyt vores miljø og sundhed
+            </h2>
+
+            <!-- Vandret karrusel -->
+            <div class="challenge-list">
+
+                <!-- CARD 1 -->
+                <a
+                    class="challenge-card"
+                    href="#challenge-plastic"
+                >
+
+                    <img
+                        class="challenge-card__image"
+                        src="assets/støt-hver-måned.jpg"
+                        alt="Plastik i havet ved en havskildpadde"
+                    >
+
+                    <div class="challenge-card__content">
+
+                        <p class="challenge-card__eyebrow">
+                            Giv et fagligt bidrag
+                        </p>
+
+                        <h3 class="challenge-card__title">
+                            Støt hver måned
+                        </h3>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CARD 2 -->
+                <a
+                    class="challenge-card"
+                    href="#challenge-biodiversity"
+                >
+
+                    <img
+                        class="challenge-card__image"
+                        src="assets/giv-enkeltbidrag.jpg"
+                        alt="Fugle i naturen"
+                    >
+
+                    <div class="challenge-card__content">
+
+                        <p class="challenge-card__eyebrow">
+                            Gør en forskel
+                        </p>
+
+                        <h3 class="challenge-card__title">
+                            Giv et enkelt bidrag
+                        </h3>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CARD 3 -->
+                <a
+                    class="challenge-card"
+                    href="#testamente"
+                >
+
+                    <img
+                        class="challenge-card__image"
+                        src="assets/støt-med-testamente.jpg"
+                        alt="Bare fødder i sandet på stranden"
+                    >
+
+                    <div class="challenge-card__content">
+
+                        <p class="challenge-card__eyebrow">
+                            Giv en renere verden videre
+                        </p>
+
+                        <h3 class="challenge-card__title">
+                            Støt med testamente
+                        </h3>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CARD 4 -->
+                <a
+                    class="challenge-card"
+                    href="#sponsor"
+                >
+
+                    <img
+                        class="challenge-card__image"
+                        src="assets/bliv-sponsor.png"
+                        alt="Person samler plastikaffald på stranden"
+                    >
+
+                    <div class="challenge-card__content">
+
+                        <p class="challenge-card__eyebrow">
+                            Støt som virksomhed
+                        </p>
+
+                        <h3 class="challenge-card__title">
+                            Bliv sponsor
+                        </h3>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SENESTE NYHEDER -->
+        <section
+            class="news"
+            aria-labelledby="news-title"
+        >
+
+            <div class="news__heading">
+
+                <h2
+                    class="section-title"
+                    id="news-title"
+                >
+                    Seneste nyheder
+                </h2>
+
+                <a
+                    class="news__all"
+                    href="#all-news"
+                    aria-label="Se alle nyheder"
+                >
+                    →
+                </a>
+
+            </div>
+
+
+            <div class="news-list">
+
+                <!-- NYHED 1 -->
+                <article class="news-card">
+
+                    <img
+                        class="news-card__image"
+                        src="assets/news-1.png"
+                        alt="Oprydning og plastikaffald ved havnen"
+                        loading="lazy"
+                    >
+
+                    <h3 class="news-card__title">
+                        <a href="#news-1">
+                            Plastic Change fjerner op mod ét ton
+                            spøgelsesnet
+                        </a>
+                    </h3>
+
+                    <time
+                        class="news-card__date"
+                        datetime="2026-09-29"
+                    >
+                        29. september 2026
+                    </time>
+
+                </article>
+
+
+                <!-- NYHED 2 -->
+                <article class="news-card">
+
+                    <img
+                        class="news-card__image"
+                        src="assets/news-2.jpeg"
+                        alt="Havskildpadde fanget i plastiknet"
+                        loading="lazy"
+                    >
+
+                    <h3 class="news-card__title">
+                        <a href="#news-2">
+                            Spøgelsesnet truer livet i havet
+                        </a>
+                    </h3>
+
+                    <time
+                        class="news-card__date"
+                        datetime="2026-09-23"
+                    >
+                        23. september 2026
+                    </time>
+
+                </article>
+
+
+                <!-- NYHED 3 -->
+                <article class="news-card">
+
+                    <img
+                        class="news-card__image"
+                        src="assets/news-3.jpg"
+                        alt="Plastikudstilling på et museum"
+                        loading="lazy"
+                    >
+
+                    <h3 class="news-card__title">
+                        <a href="#news-3">
+                            14 meter kaskelothval i fuld størrelse
+                            genopstår af plastik i Løkken
+                        </a>
+                    </h3>
+
+                    <time
+                        class="news-card__date"
+                        datetime="2026-06-19"
+                    >
+                        19. juni 2026
+                    </time>
+
+                </article>
+
+
+                <!-- NYHED 4 -->
+                <article class="news-card">
+
+                    <img
+                        class="news-card__image"
+                        src="assets/news-4.jpg"
+                        alt="Detalje af materiale med tekst om plastik"
+                        loading="lazy"
+                    >
+
+                    <h3 class="news-card__title">
+                        <a href="#news-4">
+                            These nuts may contain traces of plastic
+                        </a>
+                    </h3>
+
+                    <time
+                        class="news-card__date"
+                        datetime="2026-06-03"
+                    >
+                        3. juni 2026
+                    </time>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- BUNDNAVIGATION -->
+<nav class="bottom-nav" aria-label="Primær navigation">
+
+    <a
+        href="index.html"
+        class="bottom-nav__link"
+        aria-label="Forside"
+        aria-current="page"
+    >
+        <img
+            src="assets/Home-icon-fremhævet.png"
+            alt=""
+            class="bottom-nav__icon"
+        >
+    </a>
+
+    <a
+        href="challenge.html"
+        class="bottom-nav__link"
+        aria-label="Challenges"
+    >
+        <img
+            src="assets/Challenge-icon.png"
+            alt=""
+            class="bottom-nav__icon"
+        >
+    </a>
+
+    <a
+        href="search.html"
+        class="bottom-nav__link"
+        aria-label="Søg"
+    >
+        <img
+            src="assets/Search-icon.png"
+            alt=""
+            class="bottom-nav__icon"
+        >
+    </a>
+
+    <a
+        href="shop.html"
+        class="bottom-nav__link"
+        aria-label="Shop"
+    >
+        <img
+            src="assets/Shop-icon.png"
+            alt=""
+            class="bottom-nav__icon"
+        >
+    </a>
+
+    <a
+        href="profil.html"
+        class="bottom-nav__link"
+        aria-label="Profil"
+    >
+        <img
+            src="assets/Profile-icon.png"
+            alt=""
+            class="bottom-nav__icon"
+        >
+    </a>
+
+</nav>
+
+</body>
+</html>

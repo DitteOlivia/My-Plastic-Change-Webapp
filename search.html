@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plastic Change | Søg</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="search.js" defer></script>
+</head>
+
+<body>
+
+    <main class="search-page">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar__stats">
+
+                <div class="topbar__stat">
+                    <span class="topbar__icon" aria-hidden="true">★</span>
+                    <span class="topbar__value" id="user-points">0</span>
+                </div>
+
+                <div class="topbar__stat">
+                    <svg
+                        class="topbar__flame"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 22c4.4 0 7.5-3.1 7.5-7.3 0-3.1-1.7-5.3-4.4-7.9.1 2.8-1 4.2-2.2 4.7C13.4 6.9 12 4.4 9.2 2c.3 3.6-1.1 5.7-3 8.1C4.7 12.1 4 14 4 16c0 3.5 3.1 6 8 6z"/>
+                    </svg>
+
+                    <span class="topbar__value" id="user-streak">0</span>
+                </div>
+
+            </div>
+
+            <a href="index.html" class="topbar__logo">
+                <img
+                    src="assets/plastic-change-logo.png"
+                    alt="My Plastic Change"
+                    class="topbar__logo-image"
+                >
+            </a>
+
+        </header>
+
+        <div class="search-page__content">
+
+            <h1 class="search-page__sr-only">Søg i My Plastic Change</h1>
+
+            <!-- SØGEFELT -->
+            <form class="search-field" role="search" id="search-form">
+
+                <img
+                    src="assets/Search-icon.png"
+                    alt=""
+                    class="search-field__icon"
+                >
+
+                <label class="search-page__sr-only" for="search-input">
+                    Søg efter indhold
+                </label>
+
+                <input
+                    type="search"
+                    id="search-input"
+                    class="search-field__input"
+                    placeholder="Søg..."
+                    autocomplete="off"
+                >
+
+            </form>
+
+            <p
+                class="search-page__sr-only"
+                id="search-status"
+                role="status"
+            ></p>
+
+            <!-- KATEGORIER -->
+            <ul class="search-categories">
+
+                <li class="search-categories__item" data-search-item>
+                    <span>Nyheder</span>
+                    <span class="search-categories__arrow" aria-hidden="true">›</span>
+                </li>
+
+                <li class="search-categories__item" data-search-item>
+                    <span>Forstå plastikproblemet</span>
+                    <span class="search-categories__arrow" aria-hidden="true">›</span>
+                </li>
+
+                <li class="search-categories__item" data-search-item>
+                    <span>Vær med</span>
+                    <span class="search-categories__arrow" aria-hidden="true">›</span>
+                </li>
+
+                <li data-search-item>
+                    <a href="shop.html" class="search-categories__item">
+                        <span>Shop</span>
+                        <span class="search-categories__arrow" aria-hidden="true">›</span>
+                    </a>
+                </li>
+
+                <li class="search-categories__item" data-search-item>
+                    <span>Foreningen Plastic Change</span>
+                    <span class="search-categories__arrow" aria-hidden="true">›</span>
+                </li>
+
+            </ul>
+
+            <!-- ANDRE BESØGTE -->
+            <section
+                class="search-section"
+                aria-labelledby="search-news-title"
+                data-search-section
+            >
+                <h2 class="search-page__heading" id="search-news-title">
+                    Andre besøgte
+                </h2>
+
+                <div
+                    class="search-carousel search-carousel--news"
+                    tabindex="0"
+                    role="region"
+                    aria-label="Andre besøgte. Scroll vandret for at se flere."
+                >
+
+                    <article class="search-news" data-search-item>
+
+                        <div class="search-news__image-wrapper">
+                            <img
+                                src="assets/news-4.jpg"
+                                alt="Plastic Changes kampagne om plastik"
+                                class="search-news__image"
+                                loading="lazy"
+                            >
+
+                            <span class="search-card__badge">Nyheder</span>
+                        </div>
+
+                        <h3 class="search-news__title">
+                            These Nuts May Contain Traces of Plastic
+                        </h3>
+
+                        <time class="search-news__date" datetime="2026-09-03">
+                            3. september 2026
+                        </time>
+
+                    </article>
+
+                    <article class="search-news" data-search-item>
+
+                        <div class="search-news__image-wrapper">
+                            <img
+                                src="assets/opråb.png"
+                                alt="Plastikaffald i naturen"
+                                class="search-news__image"
+                                loading="lazy"
+                            >
+
+                            <span class="search-card__badge">Nyheder</span>
+                        </div>
+
+                        <h3 class="search-news__title">
+                            Opråb: Danskerne er trætte af, at plastikforur...
+                        </h3>
+
+                        <time class="search-news__date" datetime="2026-04-16">
+                            16. april 2026
+                        </time>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- SE SHOPPEN -->
+            <section
+                class="search-section"
+                aria-labelledby="search-shop-title"
+                data-search-section
+            >
+                <h2 class="search-page__heading" id="search-shop-title">
+                    Se shoppen
+                </h2>
+
+                <div
+                    class="search-carousel search-carousel--products"
+                    tabindex="0"
+                    role="region"
+                    aria-label="Produkter. Scroll vandret for at se flere."
+                >
+
+                    <a href="shop.html" class="search-product" data-search-item>
+
+                        <div class="search-product__image-wrapper">
+                            <img
+                                src="assets/færgekaffe.jpeg"
+                                alt="Sort Færgekaffe T-shirt"
+                                class="search-product__image"
+                                loading="lazy"
+                            >
+
+                            <span class="search-card__badge">100% øko</span>
+                        </div>
+
+                        <h3 class="search-product__title">Tee “Færgekaffe”</h3>
+                        <p class="search-product__price">1050 point</p>
+
+                    </a>
+
+                    <a href="shop.html" class="search-product" data-search-item>
+
+                        <div class="search-product__image-wrapper">
+                            <img
+                                src="assets/tee.png"
+                                alt="Blå Plastic Change T-shirt"
+                                class="search-product__image"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <h3 class="search-product__title">Tee “Plastic Change”</h3>
+                        <p class="search-product__price">1000 point</p>
+
+                    </a>
+
+                    <a href="shop.html" class="search-product" data-search-item>
+
+                        <div class="search-product__image-wrapper">
+                            <img
+                                src="assets/vintagecap.jpeg"
+                                alt="Vintage Cap"
+                                class="search-product__image"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <h3 class="search-product__title">Vintage Cap</h3>
+                        <p class="search-product__price">199,00 kr.</p>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+            <p class="search-page__empty" id="search-empty" hidden>
+                Ingen resultater. Prøv et andet søgeord.
+            </p>
+
+        </div>
+
+    </main>
+
+    <!-- BUNDNAVIGATION -->
+    <nav class="bottom-nav" aria-label="Primær navigation">
+
+        <a href="index.html" class="bottom-nav__link" aria-label="Forside">
+            <img src="assets/Home-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="challenge.html" class="bottom-nav__link" aria-label="Challenges">
+            <img src="assets/Challenge-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="search.html"
+           class="bottom-nav__link"
+           aria-label="Søg"
+           aria-current="page">
+            <img src="assets/Search-icon-fremhævet.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+        <a href="shop.html" class="bottom-nav__link" aria-label="Shop">
+            <img src="assets/Shop-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="profil.html" class="bottom-nav__link" aria-label="Profil">
+            <img src="assets/Profile-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+    </nav>
+
+</body>
+</html>

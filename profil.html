@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plastic Change | Profil</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="profil.js" defer></script>
+</head>
+
+<body>
+
+    <main class="profile-page">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar__stats">
+
+                <div class="topbar__stat">
+                    <span class="topbar__icon" aria-hidden="true">★</span>
+                    <span class="topbar__value" id="user-points">0</span>
+                </div>
+
+                <div class="topbar__stat">
+                    <svg class="topbar__flame"
+                         viewBox="0 0 24 24"
+                         aria-hidden="true">
+                        <path d="M12 22c4.4 0 7.5-3.1 7.5-7.3 0-3.1-1.7-5.3-4.4-7.9.1 2.8-1 4.2-2.2 4.7C13.4 6.9 12 4.4 9.2 2c.3 3.6-1.1 5.7-3 8.1C4.7 12.1 4 14 4 16c0 3.5 3.1 6 8 6z"/>
+                    </svg>
+                    <span class="topbar__value" id="user-streak">0</span>
+                </div>
+
+            </div>
+
+            <a href="index.html" class="topbar__logo">
+                <img
+                    src="assets/plastic-change-logo.png"
+                    alt="My Plastic Change"
+                    class="topbar__logo-image"
+                >
+            </a>
+
+        </header>
+
+        <div class="profile-page__content">
+
+            <!-- PROFIL -->
+            <section class="profile-header" aria-labelledby="profile-name">
+
+                <img
+                    src="assets/profilcover.png"
+                    alt=""
+                    class="profile-header__cover"
+                >
+
+                <div class="profile-header__identity">
+
+                    <img
+                        src="assets/profilbillede.png"
+                        alt="Katrine Hansen"
+                        class="profile-header__photo"
+                    >
+
+                    <div class="profile-header__details">
+                        <h1 id="profile-name" class="profile-header__name">
+                            Katrine Hansen
+                        </h1>
+
+                        <p class="profile-header__membership">
+                            Administrér medlemskab
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- AKTIVITET -->
+            <section class="profile-impact" aria-labelledby="impact-title">
+
+                <h2 class="profile-page__heading" id="impact-title">
+                    Din indsats gør en forskel
+                </h2>
+
+                <dl class="profile-impact__grid">
+
+                    <div class="profile-impact__item">
+                        <span class="profile-impact__icon" aria-hidden="true">
+                            <img src="assets/dråbe.svg" alt="">
+                        </span>
+                        <div>
+                            <dt>Vand sparet</dt>
+                            <dd>1.240 L</dd>
+                        </div>
+                    </div>
+
+                    <div class="profile-impact__item">
+                        <span class="profile-impact__icon" aria-hidden="true">
+                            <img src="assets/genbrug.svg" alt="">
+                        </span>
+                        <div>
+                            <dt>Plastik sparet</dt>
+                            <dd>2,5 kg</dd>
+                        </div>
+                    </div>
+
+                    <div class="profile-impact__item">
+                        <span class="profile-impact__icon" aria-hidden="true">
+                            <img src="assets/klode.svg" alt="">
+                        </span>
+                        <div>
+                            <dt>CO₂ sparet</dt>
+                            <dd>4,8 kg</dd>
+                        </div>
+                    </div>
+
+                    <div class="profile-impact__item">
+                        <span class="profile-impact__icon" aria-hidden="true">
+                            <img src="assets/plastikflaske.svg" alt="">
+                        </span>
+                        <div>
+                            <dt>Plastikvalg taget</dt>
+                            <dd>7 valg</dd>
+                        </div>
+                    </div>
+
+                </dl>
+
+            </section>
+
+            <!-- MINE KØB -->
+            <section class="profile-purchases" aria-labelledby="purchases-title">
+
+                <h2 class="profile-page__heading" id="purchases-title">
+                    Mine køb
+                </h2>
+
+                <div
+                    class="profile-purchases__carousel"
+                    tabindex="0"
+                    role="region"
+                    aria-label="Mine køb. Scroll vandret for at se alle produkter."
+                >
+                    <img
+                        src="assets/nøglering.png"
+                        alt="Nøglering med skildpadde"
+                        class="profile-purchases__image"
+                        loading="lazy"
+                    >
+
+                    <img
+                        src="assets/mug.png"
+                        alt="Krus fra Plastic Change"
+                        class="profile-purchases__image"
+                        loading="lazy"
+                    >
+
+                    <img
+                        src="assets/tee.png"
+                        alt="T-shirt fra Plastic Change"
+                        class="profile-purchases__image"
+                        loading="lazy"
+                    >
+                </div>
+
+            </section>
+
+            <!-- INDSTILLINGER -->
+            <section class="profile-settings" aria-labelledby="settings-title">
+
+                <h2 class="profile-page__heading" id="settings-title">
+                    Indstillinger
+                </h2>
+
+                <ul class="profile-settings__list">
+
+                    <li class="profile-settings__row">
+                        <span>Redigér profil</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Indstillinger og privatlivsindstillinger</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Notifikationer</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Invitér venner</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Persondata</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Abonnementer</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Støt</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li class="profile-settings__row">
+                        <span>Kontakt Plastic Change</span>
+                        <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                    </li>
+
+                    <li>
+                        <button
+                            type="button"
+                            class="profile-settings__row profile-settings__reset"
+                            id="open-reset-dialog"
+                        >
+                            <span>Nulstil streak og point</span>
+                            <span class="profile-settings__arrow" aria-hidden="true">›</span>
+                        </button>
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <p
+                class="profile-page__notice"
+                id="profile-reset-notice"
+                role="status"
+                hidden
+            ></p>
+
+        </div>
+
+    </main>
+
+    <!-- BEKRÆFT NULSTILLING -->
+    <dialog
+        class="profile-reset"
+        id="profile-reset-dialog"
+        aria-labelledby="reset-title"
+        aria-describedby="reset-description"
+    >
+        <h2 class="profile-reset__title" id="reset-title">
+            Er du sikker?
+        </h2>
+
+        <p class="profile-reset__text" id="reset-description">
+            Nulstiller du, går dine point og streak tabt,
+            og du starter fra dag 1 igen.
+        </p>
+
+        <div class="profile-reset__actions">
+            <button
+                type="button"
+                class="profile-reset__button profile-reset__button--confirm"
+                id="confirm-reset"
+            >
+                Ja
+            </button>
+
+            <button
+                type="button"
+                class="profile-reset__button profile-reset__button--cancel"
+                id="cancel-reset"
+                autofocus
+            >
+                Nej
+            </button>
+        </div>
+
+        <p class="profile-reset__error" id="reset-error" role="alert" hidden></p>
+
+    </dialog>
+
+    <!-- BUNDNAVIGATION -->
+    <nav class="bottom-nav" aria-label="Primær navigation">
+
+        <a href="index.html" class="bottom-nav__link" aria-label="Forside">
+            <img src="assets/Home-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="challenge.html" class="bottom-nav__link" aria-label="Challenges">
+            <img src="assets/Challenge-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="search.html" class="bottom-nav__link" aria-label="Søg">
+            <img src="assets/Search-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="shop.html" class="bottom-nav__link" aria-label="Shop">
+            <img src="assets/Shop-icon.png" alt="" class="bottom-nav__icon">
+        </a>
+
+        <a href="profil.html"
+           class="bottom-nav__link"
+           aria-label="Profil"
+           aria-current="page">
+            <img src="assets/Profil-icon-fremhævet.png"
+                 alt=""
+                 class="bottom-nav__icon">
+        </a>
+
+    </nav>
+
+</body>
+</html>

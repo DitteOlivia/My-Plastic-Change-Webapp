@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plastic Change | Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="shop-page">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar__stats">
+
+                <div class="topbar__stat">
+                    <span class="topbar__icon" aria-hidden="true">★</span>
+                    <span class="topbar__value" id="user-points">0</span>
+                </div>
+
+                <div class="topbar__stat">
+                    <svg
+                        class="topbar__flame"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 22c4.4 0 7.5-3.1 7.5-7.3 0-3.1-1.7-5.3-4.4-7.9.1 2.8-1 4.2-2.2 4.7C13.4 6.9 12 4.4 9.2 2c.3 3.6-1.1 5.7-3 8.1C4.7 12.1 4 14 4 16c0 3.5 3.1 6 8 6z"/>
+                    </svg>
+
+                    <span class="topbar__value" id="user-streak">0</span>
+                </div>
+
+            </div>
+
+            <a href="index.html" class="topbar__logo">
+                <img
+                    src="assets/plastic-change-logo.png"
+                    alt="My Plastic Change"
+                    class="topbar__logo-image"
+                >
+            </a>
+
+        </header>
+
+        <div class="shop-page__content">
+
+            <!-- OVERSKRIFT OG KURV -->
+            <div class="shop-page__heading">
+
+                <h1 class="shop-page__title">
+                    Udvalgte produkter
+                </h1>
+
+                <!-- Kurvens funktion kobles på senere -->
+                <svg
+                    class="shop-page__cart"
+                    viewBox="0 0 32 32"
+                    role="img"
+                    aria-label="Indkøbskurv"
+                >
+                    <path
+                        d="M3 5h4l4 16h15l3-12H8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                    <circle
+                        cx="13"
+                        cy="27"
+                        r="2"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
+                    <circle
+                        cx="25"
+                        cy="27"
+                        r="2"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
+                </svg>
+
+            </div>
+
+            <!-- PRODUKTER -->
+            <div class="shop-grid">
+
+                <article class="shop-product">
+
+                    <img
+                        src="assets/færgekaffe.jpeg"
+                        alt="Sort Færgekaffe T-shirt"
+                        class="shop-product__image"
+                    >
+
+                    <h2 class="shop-product__title">
+                        Tee “Færgekaffe”
+                    </h2>
+
+                    <p class="shop-product__price">
+                        1050 point
+                    </p>
+
+                </article>
+
+                <a href="produkt.html" class="shop-product shop-product--link">
+
+    <img
+        src="assets/tee.png"
+        alt="Blå Plastic Change T-shirt"
+        class="shop-product__image"
+    >
+
+    <h2 class="shop-product__title">
+        Tee “Plastic Change”
+    </h2>
+
+    <p class="shop-product__price">
+        1000 point
+    </p>
+
+</a>
+
+                <article class="shop-product">
+
+                    <img
+                        src="assets/thermo.jpeg"
+                        alt="Termodrikkedunk i stål med rødt Plastic Change-logo"
+                        class="shop-product__image"
+                        loading="lazy"
+                    >
+
+                    <h2 class="shop-product__title">
+                        Thermo Drikkedunk
+                    </h2>
+
+                    <p class="shop-product__price">
+                        750 point
+                    </p>
+
+                </article>
+
+                <article class="shop-product">
+
+                    <img
+                        src="assets/mug.png"
+                        alt="Hvidt emaljekrus med blå kant og hvalmotiv"
+                        class="shop-product__image"
+                        loading="lazy"
+                    >
+
+                    <h2 class="shop-product__title">
+                        Emaljekrus
+                    </h2>
+
+                    <p class="shop-product__price">
+                        650 point
+                    </p>
+
+                </article>
+
+                <article class="shop-product">
+
+                    <img
+                        src="assets/nøglering1.jpeg"
+                        alt="Nøgleringe med fiskemotiver"
+                        class="shop-product__image"
+                        loading="lazy"
+                    >
+
+                    <h2 class="shop-product__title">
+                        Nøglering med fisk
+                    </h2>
+
+                    <p class="shop-product__price">
+                        750 point
+                    </p>
+
+                </article>
+
+                <article class="shop-product">
+
+                    <img
+                        src="assets/nøglering.png"
+                        alt="Hæklet blå og gul skildpadde som nøglering"
+                        class="shop-product__image"
+                        loading="lazy"
+                    >
+
+                    <h2 class="shop-product__title">
+                        Nøglering med nemo-fisk
+                    </h2>
+
+                    <p class="shop-product__price">
+                        650 point
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- BUNDNAVIGATION -->
+    <nav class="bottom-nav" aria-label="Primær navigation">
+
+        <a href="index.html"
+           class="bottom-nav__link"
+           aria-label="Forside">
+            <img
+                src="assets/Home-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a href="challenge.html"
+           class="bottom-nav__link"
+           aria-label="Challenges">
+            <img
+                src="assets/Challenge-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a href="search.html"
+           class="bottom-nav__link"
+           aria-label="Søg">
+            <img
+                src="assets/Search-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a href="shop.html"
+           class="bottom-nav__link"
+           aria-label="Shop"
+           aria-current="page">
+            <img
+                src="assets/Shop-icon-fremhævet.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+        <a href="profil.html"
+           class="bottom-nav__link"
+           aria-label="Profil">
+            <img
+                src="assets/Profile-icon.png"
+                alt=""
+                class="bottom-nav__icon"
+            >
+        </a>
+
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_2" data-name="Lag 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428.97 590.51">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 20px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M89.64,360.89s-10.4,76.08,60.58,119.8c46.92,28.9,81.68,15.66,81.68,15.66"/>
+  <g>
+    <path class="cls-1" d="M220.99,6.95S-4.53,240.39,10.74,372.79s94.71,198.59,206.74,207.76"/>
+    <path class="cls-1" d="M208.63,7.82s224.87,232.58,209.59,364.97c-15.28,132.4-94.71,198.59-206.74,207.76"/>
+  </g>
+</svg>

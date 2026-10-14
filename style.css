@@ -1,0 +1,2334 @@
+
+/* ========================================
+   1. DESIGNSYSTEM
+======================================== */
+
+:root {
+    --color-background: #FFFFFF;
+    --color-text: #1C1E23;
+    --color-primary: #FF0755;
+    --color-navigation: #F0EEE8;
+
+    --font-heading: "Campton", Arial, sans-serif;
+    --font-body: "Rubrik", Arial, sans-serif;
+
+    --page-padding: 14px;
+    --section-gap: 24px;
+
+    --app-width: 390px;
+    --navigation-height: 60px;
+}
+
+
+/* ========================================
+   2. RESET OG GRUNDSTYLING
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #EEEEEE;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   3. WEBAPP CONTAINER
+======================================== */
+
+.home {
+    width: 100%;
+    max-width: var(--app-width);
+    min-height: 100dvh;
+
+    margin: 0 auto;
+    padding-bottom: calc(
+        var(--navigation-height) + 20px
+    );
+
+    background-color: var(--color-background);
+}
+
+
+/* ========================================
+   4. TOPBAR
+======================================== */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 60px;
+    padding: 10px 14px;
+    gap: 10px;
+
+    background-color: #FFFFFF;
+}
+
+/* Point og streak */
+.topbar__stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* De beige bokse */
+.topbar__stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    min-width: 52px;
+    height: 30px;
+    padding: 0 7px;
+
+    background-color: var(--color-navigation);
+}
+
+/* Pink stjerne */
+.topbar__icon {
+    color: var(--color-primary);
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* Pink flamme */
+.topbar__flame {
+    width: 17px;
+    height: 17px;
+    fill: var(--color-primary);
+    flex-shrink: 0;
+}
+
+/* Point og streak-tal */
+.topbar__value {
+    color: #000000;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* Logo */
+.topbar__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.topbar__logo-image {
+    display: block;
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ========================================
+   5. HERO
+======================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 390px;
+
+    overflow: hidden;
+    background-color: #087F84;
+}
+
+/* Baggrundsbillede */
+.hero__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Container til tekst og pil */
+.hero__welcome {
+    position: absolute;
+
+    left: var(--page-padding);
+    right: var(--page-padding);
+    bottom: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    z-index: 1;
+}
+
+/* Pink tekstboks med 75% opacity */
+.hero__welcome-content {
+    flex: 1;
+    min-width: 0;
+
+    padding: 14px 12px;
+
+    background-color: rgb(255 7 85 / 75%);
+    color: #FFFFFF;
+}
+
+/* Velkomstoverskrift */
+.hero__title {
+    margin: 0 0 6px;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Velkomsttekst */
+.hero__text {
+    margin: 0;
+
+    font-size: 0.76rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Separat rund knap */
+.hero__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgb(255 7 85 / 75%);
+    color: #FFFFFF;
+
+    font-size: 1.7rem;
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.hero__button:hover {
+    transform: scale(1.08);
+    background-color: #E60049;
+}
+
+.hero__button:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   6. FÆLLES OVERSKRIFTER
+======================================== */
+
+.section-title {
+    margin: 0;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* ========================================
+   7. DONATIONSKARRUSEL
+======================================== */
+
+.challenges {
+    padding-top: var(--section-gap);
+}
+
+.challenges > .section-title {
+    margin: 0 var(--page-padding) 12px;
+}
+
+/* Vandret scroll */
+.challenge-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+
+    gap: 12px;
+
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 0 var(--page-padding) 8px;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--page-padding);
+    overscroll-behavior-x: contain;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.challenge-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Kort */
+.challenge-card {
+    position: relative;
+    display: block;
+
+    height: 260px;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background-color: #087F84;
+
+    scroll-snap-align: start;
+}
+
+/* Kortbilleder */
+.challenge-card__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Gradient og tekst */
+.challenge-card__content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 14px;
+
+    color: #FFFFFF;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 35%,
+        rgba(0, 0, 0, 0.72) 100%
+    );
+}
+
+/* Lille tekst */
+.challenge-card__eyebrow {
+    margin: 0 0 5px;
+
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* Kortoverskrift */
+.challenge-card__title {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+
+/* ========================================
+   8. SENESTE NYHEDER
+======================================== */
+
+.news {
+    padding:
+        var(--section-gap)
+        var(--page-padding)
+        0;
+}
+
+/* Overskrift og pil */
+.news__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.news__all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+/* Nyhedsliste */
+.news-list {
+    display: grid;
+    gap: 18px;
+}
+
+/* Nyhedskort */
+.news-card {
+    min-width: 0;
+}
+
+/* Nyhedsbilleder */
+.news-card__image {
+    width: 100%;
+    aspect-ratio: 1.9 / 1;
+
+    object-fit: cover;
+    object-position: center;
+
+    background-color: #E5E5E5;
+}
+
+/* Pink overskrift */
+.news-card__title {
+    margin: 8px 0 4px;
+
+    color: var(--color-primary);
+
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Dato */
+.news-card__date {
+    display: block;
+
+    color: #777777;
+
+    font-size: 0.65rem;
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   9. MOBILVISNING
+======================================== */
+
+@media (max-width: 390px) {
+
+    body {
+        background-color: #FFFFFF;
+    }
+
+    .home {
+        max-width: 100%;
+    }
+
+    .hero {
+        height: 100vw;
+        max-height: 390px;
+        min-height: 320px;
+    }
+
+    .hero__welcome {
+        gap: 10px;
+    }
+
+    .hero__welcome-content {
+        padding: 12px 10px;
+    }
+
+    .hero__button {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* ========================================
+   10. SMÅ MOBILSKÆRME
+======================================== */
+
+@media (max-width: 360px) {
+
+    .topbar {
+        padding: 10px 12px;
+        gap: 6px;
+    }
+
+    .topbar__stat {
+        min-width: 48px;
+        gap: 4px;
+        padding: 0 6px;
+    }
+
+    .topbar__stats {
+        gap: 6px;
+    }
+
+    .topbar__logo-image {
+        width: 100px;
+    }
+}
+
+/* Fast navigation i bunden */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 390px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #F0EEE8;
+    padding: 8px 14px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+}
+
+.bottom-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.bottom-nav__icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+body {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+}
+
+/* ========================================
+   CHALLENGE-SIDE
+======================================== */
+
+.challenge-page {
+    width: 100%;
+    max-width: 390px;
+    margin-inline: auto;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+    background-color: #F0EEE8;
+}
+
+/* Billedet bestemmer kortets højde */
+.challenge-map {
+    position: relative;
+    width: 100%;
+}
+
+.challenge-map__background {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.challenge-map__svg-definitions {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* POINT OG STREAK */
+
+.challenge-map__stats {
+    position: absolute;
+    top: 4.3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 4px;
+    width: 46%;
+}
+
+.challenge-map__stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    flex: 1;
+    min-width: 0;
+    padding: 10px 6px;
+
+    background-color: #F0EEE8;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
+}
+
+.challenge-map__star {
+    color: #FF0755;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.challenge-map__flame {
+    width: 22px;
+    height: 28px;
+    flex-shrink: 0;
+    fill: #FF0755;
+}
+
+.challenge-map__stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: var(--font-body);
+    line-height: 1.1;
+}
+
+.challenge-map__value {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.challenge-map__label {
+    font-size: 10px;
+}
+
+/* CHALLENGE-CIRKLER */
+
+.challenge-day {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--day-size);
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+
+    font-family: var(--font-body);
+    color: #FFFFFF;
+    background-color: #008580;
+    box-shadow: 0 0 4px 2px rgb(255 255 255 / 45%);
+
+    cursor: pointer;
+}
+
+.challenge-day--locked {
+    color: #D3D5DA;
+    background-color: #858993;
+}
+
+.challenge-day__number {
+    font-size: clamp(10px, 5vw, 20px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.challenge-day__lock {
+    width: 24%;
+    height: 24%;
+    margin-bottom: 2px;
+    flex-shrink: 0;
+}
+
+.challenge-day:focus-visible {
+    outline: 3px solid #FF0755;
+    outline-offset: 4px;
+}
+
+/* Placeringerne følger mockuppen */
+
+.challenge-day--1 {
+    --day-size: 20%;
+    left: 41%;
+    top: 68%;
+}
+
+.challenge-day--1 .challenge-day__number {
+    font-size: clamp(24px, 8vw, 32px);
+}
+
+.challenge-day--2 {
+    --day-size: 16%;
+    left: 66%;
+    top: 49.5%;
+}
+
+.challenge-day--3 {
+    --day-size: 14%;
+    left: 35.5%;
+    top: 38%;
+}
+
+.challenge-day--4 {
+    --day-size: 11%;
+    left: 51%;
+    top: 27.2%;
+}
+
+.challenge-day--5 {
+    --day-size: 8.5%;
+    left: 32.5%;
+    top: 22.5%;
+}
+
+.challenge-day--5 .challenge-day__number {
+    font-size: 13px;
+}
+
+.challenge-day--6 {
+    --day-size: 6%;
+    left: 44.5%;
+    top: 18%;
+}
+
+.challenge-day--6 .challenge-day__number {
+    font-size: 10px;
+}
+
+.challenge-day--7 {
+    --day-size: 3%;
+    left: 29%;
+    top: 15.2%;
+}
+
+.challenge-day--7 .challenge-day__number {
+    font-size: 6px;
+}
+
+.challenge-day--7 .challenge-day__lock {
+    margin-bottom: 0;
+}
+
+/* SKILDPADDE */
+
+.challenge-map__turtle {
+    position: absolute;
+    left: 50%;
+    top: 78.5%;
+    transform: translateX(-50%);
+
+    width: 23%;
+    height: auto;
+
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 20%));
+    pointer-events: none;
+}
+/* BESKED VED LÅST DAG */
+
+.locked-message {
+    position: absolute;
+    top: 52%;
+    left: 39%;
+    z-index: 10;
+
+    width: 90px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    color: #000000;
+    background-color: #CDD0D6;
+    box-shadow: 0 4px 5px rgb(0 0 0 / 25%);
+    font-family: var(--font-body);
+}
+
+.locked-message[hidden] {
+    display: none;
+}
+
+.locked-message__title {
+    display: block;
+    padding-right: 12px;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.locked-message__text {
+    margin: 4px 0 0;
+    font-size: 7px;
+    line-height: 1.3;
+}
+
+.locked-message__lock {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+
+    width: 10px;
+    height: 12px;
+    color: #858993;
+}
+
+/* POPUP TIL DAG 1 */
+
+.challenge-modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+
+    width: calc(100% - 48px);
+    max-width: 334px;
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    padding: 12px 30px 50px;
+    border: 0;
+    border-radius: 10px;
+
+    color: #1C1E23;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+.challenge-modal::backdrop {
+    background-color: rgb(0 0 0 / 65%);
+}
+
+.challenge-modal__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+
+    color: #000000;
+    background: transparent;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.challenge-modal__day {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.challenge-modal__steps {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.challenge-modal__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.challenge-modal__dot--active {
+    background-color: #858585;
+}
+
+.challenge-modal__title {
+    margin: 20px 0 28px;
+    font-family: var(--font-heading);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.challenge-modal__image {
+    display: block;
+    width: 54px;
+    height: 82px;
+    margin: 0 auto 28px;
+    object-fit: contain;
+}
+
+.challenge-modal__subtitle {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.challenge-modal__text {
+    margin: 34px 0 40px;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.challenge-modal__button {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 999px;
+
+    color: #FFFFFF;
+    background-color: #FF0755;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.challenge-modal__close:focus-visible,
+.challenge-modal__button:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 3px;
+}
+
+html.challenge-modal-open,
+html.challenge-modal-open body {
+    overflow: hidden;
+}
+
+/* KAMERA OG BILLEDE */
+
+.challenge-modal__panel[hidden],
+.challenge-modal__preview[hidden],
+.challenge-modal__error[hidden] {
+    display: none;
+}
+
+.challenge-modal__instruction {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.challenge-modal__camera {
+    display: block;
+    width: 70px;
+    height: 60px;
+    margin: 24px auto 34px;
+    object-fit: contain;
+}
+
+.challenge-modal__preview {
+    display: block;
+    width: 90px;
+    height: 120px;
+    margin: 16px auto 28px;
+    object-fit: contain;
+}
+
+.challenge-modal__retake {
+    display: block;
+    min-height: 44px;
+    margin: 8px auto 0;
+    padding: 10px;
+    border: 0;
+
+    color: #858993;
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.challenge-modal__error {
+    margin: 16px 0 0;
+    color: #B00020;
+    font-size: 13px;
+}
+
+.challenge-modal__retake:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 3px;
+}
+
+/* CHALLENGE GENNEMFØRT */
+
+.challenge-modal--completed {
+    padding-top: 38px;
+    padding-bottom: 28px;
+}
+
+.challenge-modal--completed .challenge-modal__day,
+.challenge-modal--completed .challenge-modal__steps {
+    display: none;
+}
+
+.challenge-modal--completed .challenge-modal__title {
+    margin: 22px 0 0;
+    font-size: 23px;
+}
+
+/* Ikonet placeres visuelt over overskriften */
+.challenge-modal--completed[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.challenge-modal--completed .challenge-modal__panel[data-step="4"] {
+    display: contents;
+}
+
+.challenge-modal__completed-icon {
+    order: -1;
+    display: block;
+    width: 94px;
+    height: 94px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.challenge-modal__completed-text {
+    margin: 30px 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.challenge-modal__quiz-info {
+    padding: 24px 20px;
+    margin-bottom: 28px;
+    background-color: #FAF9F8;
+    text-align: left;
+}
+
+.challenge-modal__quiz-info p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.challenge-modal__quiz-button {
+    position: relative;
+    padding-inline: 40px;
+}
+
+.challenge-modal__quiz-button span {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-weight: 400;
+}
+
+/* QUIZ */
+
+.challenge-modal--quiz {
+    padding-top: 20px;
+    padding-bottom: 48px;
+}
+
+.challenge-modal--quiz .challenge-modal__day,
+.challenge-modal--quiz .challenge-modal__steps {
+    display: none;
+}
+
+.challenge-modal--quiz .challenge-modal__title {
+    margin: 0 0 4px;
+}
+
+.challenge-quiz__counter {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.challenge-quiz__progress {
+    display: block;
+    width: 100%;
+    height: 7px;
+    margin: 22px 0 24px;
+
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    overflow: hidden;
+    background-color: #D9D9D9;
+}
+
+.challenge-quiz__progress::-webkit-progress-bar {
+    background-color: #D9D9D9;
+    border-radius: 999px;
+}
+
+.challenge-quiz__progress::-webkit-progress-value {
+    background-color: #A5A5A5;
+    border-radius: 999px;
+}
+
+.challenge-quiz__progress::-moz-progress-bar {
+    background-color: #A5A5A5;
+    border-radius: 999px;
+}
+
+.challenge-quiz__question {
+    margin: 0 0 38px;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.challenge-quiz__answers {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.challenge-quiz__answer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 48px;
+    padding: 8px;
+    border: 1px solid #E5E4E2;
+
+    color: #1C1E23;
+    background-color: #FAF9F8;
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.challenge-quiz__answer:hover {
+    background-color: #F0EEE8;
+}
+
+.challenge-quiz__letter {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    color: #FFFFFF;
+    background-color: #FF0755;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.challenge-quiz__answer:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 2px;
+}
+
+/* FEEDBACK PÅ QUIZSVAR */
+
+.challenge-quiz__answer--correct,
+.challenge-quiz__answer--correct:hover {
+    background-color: #DCEEE0;
+    border-color: #8DB99A;
+}
+
+.challenge-quiz__answer--wrong,
+.challenge-quiz__answer--wrong:hover {
+    background-color: #F8DEDE;
+    border-color: #DCA0A0;
+}
+
+.challenge-quiz__answer:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+/* GODT GÅET */
+
+.challenge-modal--result {
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+.challenge-modal--result[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.challenge-modal--result .challenge-modal__day,
+.challenge-modal--result .challenge-modal__steps {
+    display: none;
+}
+
+.challenge-modal--result .challenge-modal__panel[data-step="8"]:not([hidden]) {
+    display: contents;
+}
+
+.challenge-modal--result .challenge-modal__title {
+    margin: 18px 0 0;
+    font-size: 23px;
+}
+
+.challenge-result__text {
+    margin: 24px 0 20px;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.challenge-result__reward {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    padding: 22px 12px;
+    margin-bottom: 24px;
+    background-color: #FAF9F8;
+}
+
+.challenge-result__star {
+    color: #FF0755;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.challenge-result__points {
+    font-family: var(--font-heading);
+    font-size: 23px;
+    line-height: 1.2;
+}
+
+.challenge-result__label {
+    margin: 6px 0 0;
+    font-size: 14px;
+}
+
+/* ========================================
+   PROFILSIDE
+======================================== */
+
+.profile-page {
+    width: 100%;
+    max-width: 390px;
+    margin-inline: auto;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+    background-color: #FFFFFF;
+    color: #1C1E23;
+    font-family: var(--font-body);
+}
+
+.profile-page__content {
+    padding: 0 14px 18px;
+}
+
+.profile-page__heading {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* COVER OG PROFILBILLEDE */
+
+.profile-header {
+    margin-bottom: 30px;
+}
+
+.profile-header__cover {
+    display: block;
+    width: 100%;
+    height: 118px;
+    object-fit: cover;
+}
+
+.profile-header__identity {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    margin: -68px 0 0;
+    padding-left: 22px;
+}
+
+.profile-header__photo {
+    display: block;
+    flex-shrink: 0;
+    width: 144px;
+    height: 144px;
+    object-fit: cover;
+}
+
+.profile-header__details {
+    min-width: 0;
+    padding-bottom: 20px;
+}
+
+.profile-header__name {
+    margin: 0 0 4px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.profile-header__membership {
+    margin: 0;
+    color: #858993;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+/* INDSATS */
+
+.profile-impact {
+    margin-bottom: 30px;
+}
+
+.profile-impact__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 12px;
+
+    margin: 0;
+    padding: 20px 14px;
+    background-color: #F0EEE8;
+}
+
+.profile-impact__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-impact__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 30px;
+    height: 34px;
+}
+
+/* Plads reserveret til dine kommende ikoner */
+.profile-impact__icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.profile-impact__item dt {
+    margin: 0 0 5px;
+    font-size: 13px;
+    line-height: 1.25;
+}
+
+.profile-impact__item dd {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* KØBSKARRUSEL */
+
+.profile-purchases {
+    margin-bottom: 30px;
+}
+
+.profile-purchases__carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.profile-purchases__carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-purchases__image {
+    display: block;
+    flex: 0 0 35%;
+    width: 35%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    scroll-snap-align: start;
+    background-color: #E8E8E8;
+}
+
+/* INDSTILLINGER */
+
+.profile-settings__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-settings__list > li {
+    border-top: 1px solid #BDBDBD;
+}
+
+.profile-settings__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    min-height: 58px;
+    box-sizing: border-box;
+    padding: 12px 8px 12px 0;
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+.profile-settings__arrow {
+    flex-shrink: 0;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.profile-settings__reset {
+    width: 100%;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.profile-page__notice {
+    margin: 12px 0 0;
+    color: #008580;
+    font-size: 14px;
+}
+
+/* NULSTILLINGSPOPUP */
+
+.profile-reset {
+    width: calc(100% - 48px);
+    max-width: 334px;
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    padding: 30px 24px;
+    border: 0;
+    border-radius: 10px;
+
+    color: #1C1E23;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+.profile-reset::backdrop {
+    background-color: rgb(0 0 0 / 65%);
+}
+
+.profile-reset__title {
+    margin: 0 0 18px;
+    font-family: var(--font-heading);
+    font-size: 24px;
+}
+
+.profile-reset__text {
+    margin: 0 0 26px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.profile-reset__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.profile-reset__button {
+    flex: 1;
+    min-height: 48px;
+    padding: 12px;
+    border: 0;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-reset__button--confirm {
+    color: #FFFFFF;
+    background-color: #FF0755;
+}
+
+.profile-reset__button--cancel {
+    color: #1C1E23;
+    background-color: #F0EEE8;
+}
+
+.profile-reset__error {
+    color: #B00020;
+    font-size: 13px;
+}
+
+.profile-settings__reset:focus-visible,
+.profile-reset__button:focus-visible,
+.profile-purchases__carousel:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 3px;
+}
+
+/* LIDT MINDRE PROFILBILLEDE PÅ SMALLE SKÆRME */
+
+@media (max-width: 360px) {
+    .profile-header__identity {
+        gap: 16px;
+        padding-left: 14px;
+    }
+
+    .profile-header__photo {
+        width: 120px;
+        height: 132px;
+    }
+
+    .profile-header__name {
+        font-size: 16px;
+    }
+
+    .profile-impact__grid {
+        padding-inline: 10px;
+        column-gap: 8px;
+    }
+}
+
+/* SAMLET BELØNNING */
+
+.challenge-modal--result .challenge-modal__panel[data-step="9"]:not([hidden]) {
+    display: contents;
+}
+
+.challenge-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 6px 0 30px;
+}
+
+.challenge-summary__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border: 1px solid #E5E4E2;
+
+    background-color: #FAF9F8;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.challenge-summary__star {
+    flex-shrink: 0;
+    color: #FF0755;
+    font-size: 36px;
+    line-height: 1;
+}
+
+.challenge-summary__row--total {
+    gap: 32px;
+    padding-left: 12px;
+}
+
+.challenge-summary__shop {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* ========================================
+   SØGESIDE
+======================================== */
+
+.search-page {
+    width: 100%;
+    max-width: 390px;
+    margin-inline: auto;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+
+    color: #1C1E23;
+    background-color: #FFFFFF;
+    font-family: var(--font-body);
+}
+
+.search-page__content {
+    padding: 0 14px 28px;
+}
+
+.search-page__heading {
+    margin: 0 0 12px;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.search-page__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* SØGEFELT */
+
+.search-field {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 60px;
+    padding: 12px;
+    box-sizing: border-box;
+
+    background-color: #E5E6EA;
+}
+
+.search-field__icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.search-field__input {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 0;
+    border: 0;
+
+    color: #1C1E23;
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.search-field__input::placeholder {
+    color: #999BA0;
+}
+
+.search-field:focus-within {
+    outline: 2px solid #008580;
+    outline-offset: 2px;
+}
+
+.search-field__input:focus {
+    outline: none;
+}
+
+/* KATEGORIER */
+
+.search-categories {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 32px;
+}
+
+.search-categories > li {
+    border-top: 1px solid #A5A5A5;
+}
+
+.search-categories > li:last-child {
+    border-bottom: 1px solid #A5A5A5;
+}
+
+.search-categories__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    min-height: 58px;
+    padding: 12px 8px 12px 0;
+    box-sizing: border-box;
+
+    color: inherit;
+    font-size: 16px;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+.search-categories__arrow {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    line-height: 1;
+}
+
+/* KARRUSELLER */
+
+.search-section + .search-section {
+    margin-top: 34px;
+}
+
+.search-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    /* Lad næste kort fortsætte til appens højre kant */
+    margin-right: -14px;
+    padding-right: 14px;
+}
+
+.search-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.search-carousel--news {
+    gap: 24px;
+}
+
+.search-carousel--products {
+    gap: 20px;
+}
+
+/* NYHEDER */
+
+.search-news {
+    flex: 0 0 66%;
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.search-news__image-wrapper,
+.search-product__image-wrapper {
+    position: relative;
+}
+
+.search-news__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+}
+
+.search-card__badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 2px 4px;
+    color: #1C1E23;
+    background-color: rgb(240 238 232 / 85%);
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.search-news__title {
+    margin: 5px 0;
+    color: #FF0755;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.search-news__date {
+    color: #858993;
+    font-size: 12px;
+}
+
+/* PRODUKTER */
+
+.search-product {
+    flex: 0 0 35%;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+    scroll-snap-align: start;
+}
+
+.search-product__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background-color: #E8E8E8;
+}
+
+.search-product__title {
+    margin: 6px 0 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.search-product__price {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.search-page__empty {
+    margin: 24px 0;
+    font-size: 15px;
+}
+
+/* SKJUL FILTREREDE RESULTATER */
+
+.search-page [hidden] {
+    display: none;
+}
+
+.search-product:focus-visible,
+.search-categories a:focus-visible,
+.search-carousel:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 2px;
+}
+
+.search-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   SHOP
+======================================== */
+
+.shop-page {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-inline: auto;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+
+    color: #1C1E23;
+    background-color: #FFFFFF;
+    font-family: var(--font-body);
+}
+
+.shop-page__content {
+    padding: 0 14px 52px;
+}
+
+/* OVERSKRIFT OG KURV */
+
+.shop-page__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.shop-page__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.shop-page__cart {
+    display: block;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    color: #1C1E23;
+}
+
+/* PRODUKTOVERSIGT */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 26px;
+    row-gap: 32px;
+}
+
+.shop-product {
+    min-width: 0;
+}
+
+.shop-product__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    object-fit: cover;
+    background-color: #E8E8E8;
+}
+
+.shop-product__title {
+    margin: 6px 0 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.shop-product__price {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* ========================================
+   PRODUKTSIDE
+======================================== */
+
+.product-page {
+    width: 100%;
+    max-width: 390px;
+    min-height: 100dvh;
+    margin-inline: auto;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
+    color: #1C1E23;
+    background-color: #FFFFFF;
+    font-family: var(--font-body);
+}
+
+.product-page__cart-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 22px 14px;
+}
+
+.product-page__cart {
+    width: 26px;
+    height: 26px;
+}
+
+.product-page__gallery {
+    position: relative;
+    background-color: #D9D9D9;
+}
+
+.product-page__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.product-page__back {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: #1C1E23;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.product-page__content {
+    padding: 0 24px 26px;
+}
+
+.product-page__dots {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0 20px;
+}
+
+.product-page__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #858585;
+}
+
+.product-page__title {
+    margin: 0 0 4px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.product-page__price {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* STØRRELSER */
+
+.product-sizes {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+    margin: 28px 0 24px;
+    padding: 0;
+    border: 0;
+}
+
+.product-sizes__option {
+    position: relative;
+    cursor: pointer;
+}
+
+.product-sizes__option input,
+.product-page__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.product-sizes__option span {
+    display: grid;
+    place-items: center;
+    min-height: 32px;
+    border: 1px solid #1C1E23;
+    font-size: 11px;
+}
+
+.product-sizes__option input:checked + span {
+    color: #FFFFFF;
+    background-color: #1C1E23;
+}
+
+.product-sizes__option input:focus-visible + span {
+    outline: 3px solid #008580;
+    outline-offset: 2px;
+}
+
+/* KNAP OG EGENSKABER */
+
+.product-page__button {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 999px;
+    color: #FFFFFF;
+    background-color: #FF0755;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-page__message {
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.product-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+    font-size: 14px;
+}
+
+.product-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-features li > span {
+    display: grid;
+    place-items: center;
+    width: 16px;
+}
+
+.product-features .product-features__stock {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background-color: #49B438;
+    font-size: 10px;
+}
+
+/* FOLDBARE BOKSE */
+
+.product-information {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.product-information__item {
+    border: 1px solid #E5E4E2;
+    background-color: #FAF9F8;
+}
+
+.product-information__item summary {
+    position: relative;
+    list-style: none;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product-information__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.product-information__item summary::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid #1C1E23;
+    border-bottom: 1px solid #1C1E23;
+    transform: rotate(45deg);
+}
+
+.product-information__item[open] summary::after {
+    top: 24px;
+    transform: rotate(225deg);
+}
+
+.product-information__item p {
+    margin: 0;
+    padding: 0 16px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* POPUP */
+
+.product-dialog {
+    width: calc(100% - 48px);
+    max-width: 334px;
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 36px 24px 24px;
+    border: 0;
+    border-radius: 10px;
+    color: #1C1E23;
+    background-color: #FFFFFF;
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.product-dialog::backdrop {
+    background-color: rgb(0 0 0 / 65%);
+}
+
+.product-dialog__close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.product-dialog__star {
+    color: #FF0755;
+    font-size: 58px;
+}
+
+.product-dialog__title {
+    margin: 14px 0 20px;
+    font-family: var(--font-heading);
+    font-size: 24px;
+}
+
+.product-dialog__text {
+    margin: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.product-dialog__cancel {
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 10px;
+    border: 0;
+    color: #858993;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.product-page__button:focus-visible,
+.product-page__back:focus-visible,
+.product-dialog button:focus-visible,
+.product-information summary:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 3px;
+}
+
+.shop-product--link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.shop-product--link:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 3px;
+}
+
+/* PRODUKTBILLEDER MED SWIPE */
+
+.product-gallery {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.product-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.product-gallery__image {
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 0.68;
+    object-fit: contain;
+    background-color: #D9D9D9;
+    scroll-snap-align: start;
+}
+
+.product-page__back {
+    z-index: 2;
+}
+
+.product-page__dots {
+    gap: 4px;
+}
+
+.product-page__dot {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.product-page__dot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.product-page__dot--active::after {
+    background-color: #858585;
+}
+
+.product-page__dot:focus-visible,
+.product-gallery:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 2px;
+}

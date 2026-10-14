@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_3" data-name="Lag 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.36 333.73">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 17px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M128.3,47.71v-18.95c0-11.19,9.07-20.27,20.27-20.27h126.73c11.18,0,20.25,9.06,20.25,20.25v18.97h89.36s28.95,2.11,28.95,31.13v209.17s.9,29.28-33.59,37.22H41.13s-30.78-5.3-32.63-32.72V78.37s4.8-30.97,31.39-31.21c0,0,89.15-.19,88.4.55Z"/>
+  <circle class="cls-1" cx="211.18" cy="183.75" r="91.97"/>
+  <circle class="cls-2" cx="358.49" cy="102.9" r="11.12"/>
+</svg>

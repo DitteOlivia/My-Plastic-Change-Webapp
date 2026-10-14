@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Lag_2" data-name="Lag 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.33 528.08">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 15px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M47.58,7.5h155.83v69.72H47.58V7.5Z"/>
+  <path class="cls-1" d="M203.41,42.36H47.58"/>
+  <path class="cls-1" d="M72.82,77.22v50.99S6.22,184.4,7.52,213.02v273.11s-1.73,33.18,32.64,34.05,170.96,0,170.96,0c0,0,27.79,1.12,31.65-32.85V212.7s4.54-27.17-64.56-85.42v-50.06"/>
+  <line class="cls-1" x1="7.52" y1="213.02" x2="242.77" y2="213.02"/>
+  <line class="cls-1" x1="7.5" y1="469.04" x2="242.83" y2="469.04"/>
+  <path class="cls-1" d="M125.48,410.98s-20.38.98-38.36-10.45c-25.95-16.49-48.68-71.91-3.84-114.17"/>
+  <polyline class="cls-1" points="47.83 280.72 90.98 280.72 90.98 324.63"/>
+  <path class="cls-1" d="M125.14,274.58s20.38-.98,38.36,10.45c25.95,16.49,48.68,71.91,3.84,114.17"/>
+  <polyline class="cls-1" points="202.8 404.85 159.65 404.85 159.65 360.94"/>
+</svg>
