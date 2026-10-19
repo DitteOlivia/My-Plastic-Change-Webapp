@@ -2484,3 +2484,182 @@ body:has(.challenge-page) {
     object-fit: contain;
 }
 
+/* ========================================
+   INTRODUKTION TIL CHALLENGES
+======================================== */
+
+.challenge-intro {
+    width: calc(100% - 48px);
+    max-width: 334px;
+    max-height: calc(100dvh - 32px);
+
+    margin: auto;
+    padding: 28px 36px 34px;
+
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    border: 0;
+    border-radius: 10px;
+
+    color: #1C1E23;
+    background-color: #FFFFFF;
+
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.challenge-intro::backdrop {
+    background-color: rgb(0 0 0 / 65%);
+}
+
+.challenge-intro__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-bottom: 28px;
+}
+
+.challenge-intro__dot {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.challenge-intro__dot--active {
+    background-color: #858585;
+}
+
+.challenge-intro__title {
+    margin: 0 0 26px;
+
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Titlen modtager fokus ved skift mellem introduktionens trin. */
+.challenge-intro__title:focus {
+    outline: none;
+}
+
+.challenge-intro__panel[hidden] {
+    display: none;
+}
+
+.challenge-intro__text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.challenge-intro__text p {
+    margin: 0;
+}
+
+.challenge-intro__text p + p {
+    margin-top: 20px;
+}
+
+.challenge-intro__star {
+    display: block;
+    margin: -12px 0 24px;
+
+    color: #FF0755;
+    font-size: 64px;
+    line-height: 1;
+}
+
+.challenge-intro__button {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    min-height: 48px;
+    margin-top: 32px;
+    padding: 12px 36px;
+
+    border: 0;
+    border-radius: 999px;
+
+    color: #FFFFFF;
+    background-color: #FF0755;
+
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.challenge-intro__arrow {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.challenge-intro__back {
+    display: block;
+
+    min-height: 44px;
+    margin: 8px auto 0;
+    padding: 10px;
+
+    border: 0;
+
+    color: #858993;
+    background: transparent;
+
+    font-family: var(--font-body);
+    font-size: 12px;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.challenge-intro__button:focus-visible,
+.challenge-intro__back:focus-visible {
+    outline: 3px solid #008580;
+    outline-offset: 3px;
+}
+
+html.challenge-intro-open,
+html.challenge-intro-open body {
+    overflow: hidden;
+}
+
+/* Mindre afstande på lave skærme. */
+@media (max-height: 650px) {
+    .challenge-intro {
+        padding: 20px 28px 24px;
+    }
+
+    .challenge-intro__dots {
+        margin-bottom: 20px;
+    }
+
+    .challenge-intro__title {
+        margin-bottom: 20px;
+    }
+
+    .challenge-intro__text p + p {
+        margin-top: 14px;
+    }
+
+    .challenge-intro__button {
+        margin-top: 24px;
+    }
+}
+

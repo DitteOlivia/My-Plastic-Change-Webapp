@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="style.css?v=2">
     <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
+<script src="challenge-intro.js" defer></script>
 </head>
 
 <body>
@@ -622,71 +624,53 @@
 
     </dialog>
 
-    <!-- BUNDNAVIGATION -->
-    <nav class="bottom-nav" aria-label="Primær navigation">
+    <!-- INTRODUKTION TIL CHALLENGES -->
+<dialog
+    class="challenge-intro"
+    id="challenge-intro"
+    aria-labelledby="challenge-intro-title"
+>
+    <div
+        class="challenge-intro__dots"
+        role="img"
+        aria-label="Trin 1 af 2"
+        id="challenge-intro-progress"
+    >
+        <span class="challenge-intro__dot challenge-intro__dot--active"></span>
+        <span class="challenge-intro__dot"></span>
+    </div>
 
-        <a
-            href="index.html"
-            class="bottom-nav__link"
-            aria-label="Forside"
-        >
-            <img
-                src="assets/Home-icon.png"
-                alt=""
-                class="bottom-nav__icon"
-            >
-        </a>
+    <h2
+        class="challenge-intro__title"
+        id="challenge-intro-title"
+        tabindex="-1"
+    >
+        My Plastic Challenge
+    </h2>
 
-        <a
-            href="challenge.html"
-            class="bottom-nav__link"
-            aria-label="Challenges"
-            aria-current="page"
-        >
-            <img
-                src="assets/Challenge-icon-fremhævet.png"
-                alt=""
-                class="bottom-nav__icon"
-            >
-        </a>
+    <!-- FØRSTE BOKS -->
+    <div class="challenge-intro__panel" data-intro-step="1">
 
-        <a
-            href="search.html"
-            class="bottom-nav__link"
-            aria-label="Søg"
-        >
-            <img
-                src="assets/Search-icon.png"
-                alt=""
-                class="bottom-nav__icon"
-            >
-        </a>
+        <div class="challenge-intro__text">
+            <p>
+                My Plastic Challenge går ud på at udføre en daglig
+                challenge for at mindske dit plastikforbrug.
+                Bagefter dokumenterer du, at du er kommet i mål.
+            </p>
 
-        <a
-            href="shop.html"
-            class="bottom-nav__link"
-            aria-label="Shop"
-        >
-            <img
-                src="assets/Shop-icon.png"
-                alt=""
-                class="bottom-nav__icon"
-            >
-        </a>
+            <p>
+                Du optjener 50 point for dagens challenge.
+                Svarer du rigtigt på alle 3 spørgsmål i quizzen,
+                får du 25 ekstra point.
+            </p>
 
-        <a
-            href="profil.html"
-            class="bottom-nav__link"
-            aria-label="Profil"
-        >
-            <img
-                src="assets/Profile-icon.png"
-                alt=""
-                class="bottom-nav__icon"
-            >
-        </a>
+            <p>
+                Pointene kan du bruge på udvalgte produkter
+                i vores shop i samarbejde med Hjemhavn.
+            </p>
+        </div>
 
-    </nav>
-
-</body>
-</html>
+        <button
+            type="button"
+            class="challenge-intro__button"
+            id="challenge-intro-next"
