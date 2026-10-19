@@ -2332,3 +2332,155 @@ html.challenge-modal-open body {
     outline: 3px solid #008580;
     outline-offset: 2px;
 }
+
+/* ========================================
+   QUIZRESULTAT: FÆRRE END TRE RIGTIGE
+======================================== */
+
+.challenge-modal--failed[open] {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 30px 34px;
+}
+
+.challenge-modal--failed .challenge-modal__day,
+.challenge-modal--failed .challenge-modal__steps {
+    display: none;
+}
+
+/* Gør panelets indhold til en del af dialogens flex-layout. */
+.challenge-modal--failed
+.challenge-modal__panel[data-step="10"]:not([hidden]) {
+    display: contents;
+}
+
+/* Ansigtet placeres over den fælles overskrift. */
+.challenge-failed__icon {
+    display: block;
+    order: -1;
+    flex-shrink: 0;
+
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px;
+    object-fit: contain;
+}
+
+.challenge-modal--failed .challenge-modal__title {
+    margin: 0 0 26px;
+
+    color: #000000;
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.challenge-failed__score {
+    margin: 0 0 34px;
+
+    color: #1C1E23;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.challenge-failed__message {
+    margin: 0 0 24px;
+    padding: 28px 12px 22px;
+
+    color: #1C1E23;
+    background-color: #FAF9F8;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.challenge-failed__message p {
+    margin: 0;
+}
+
+.challenge-failed__message p + p {
+    margin-top: 3px;
+}
+
+.challenge-failed__message strong {
+    font-weight: 700;
+}
+
+.challenge-failed__button {
+    position: relative;
+    flex-shrink: 0;
+
+    min-height: 48px;
+    padding: 12px 44px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.challenge-failed__arrow {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* ========================================
+   CHALLENGE-KORT TILPASSET TELEFONENS HØJDE
+======================================== */
+
+/* Fjern den ekstra bundafstand på challenge-siden. */
+body:has(.challenge-page) {
+    padding-bottom: 0;
+}
+
+.challenge-page {
+    --challenge-nav-height: calc(
+        64px + env(safe-area-inset-bottom)
+    );
+
+    height: 100dvh;
+    min-height: 0;
+    padding-bottom: var(--challenge-nav-height);
+    box-sizing: border-box;
+}
+
+.challenge-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Baggrunden fylder kortet uden at bestemme højden. */
+.challenge-map__background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Hold hele skildpadden over bundnavigationen. */
+.challenge-map__turtle {
+    top: auto;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 23%;
+    height: 18%;
+    object-fit: contain;
+}
+

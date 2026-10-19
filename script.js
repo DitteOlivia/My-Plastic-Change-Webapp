@@ -173,6 +173,9 @@ if (challengeButton && challengesSection) {
     const skipQuizButton = modal.querySelector("#skip-challenge-quiz");
     const resultNextButton = modal.querySelector("#quiz-result-next");
 
+    const failedScore = modal.querySelector("#quiz-failed-score");
+    const failedCloseButton = modal.querySelector("#quiz-failed-close");
+
     let photoUrl = null;
     let quizCorrectAnswers = 0;
     let quizTransitionTimer = null;
@@ -198,7 +201,8 @@ if (challengeButton && challengesSection) {
             6: "Quiz",
             7: "Quiz",
             8: "Godt gået!",
-            9: "Challenge fuldført!"
+            9: "Challenge fuldført!",
+            10: "Bedre held næste gang!"
         };
 
         modal.classList.toggle(
@@ -216,8 +220,20 @@ if (challengeButton && challengesSection) {
             step === 8 || step === 9
         );
 
+        modal.classList.toggle(
+            "challenge-modal--failed",
+            step === 10
+        );
+
         title.textContent = titles[step];
         title.setAttribute("tabindex", "-1");
+
+        // På resultatet forbindes dialogen med resultatteksten.
+        if (step === 10) {
+            modal.setAttribute("aria-describedby", "quiz-failed-score");
+        } else {
+            modal.removeAttribute("aria-describedby");
+        }
 
         panels.forEach((panel) => {
             panel.hidden = Number(panel.dataset.step) !== step;
@@ -271,22 +287,10 @@ if (challengeButton && challengesSection) {
         if (correctAnswers === 3) {
             showStep(8, moveFocus);
         } else {
-            // Erstattes senere med en selvstændig resultatpopup.
-            showStep(7, moveFocus);
+            failedScore.textContent =
+                `Du fik ${correctAnswers} ud af 3 rigtige`;
 
-            modal.querySelectorAll(
-                '[data-step="7"] .challenge-quiz__answer'
-            ).forEach((button) => {
-                button.disabled = true;
-            });
-
-            errorMessage.textContent =
-                "Bedre held næste gang! Du fik " +
-                correctAnswers +
-                " ud af 3 rigtige. Du beholder dine 50 challengepoint " +
-                "og 1 streak. Prøv igen i morgen.";
-
-            errorMessage.hidden = false;
+            showStep(10, moveFocus);
         }
     }
 
@@ -322,6 +326,8 @@ if (challengeButton && challengesSection) {
                     answer.disabled = true;
                 });
 
+                // Gem straks efter sidste svar.
+                // Resultatet bevares, hvis popuppen lukkes under pausen.
                 if (question.nextStep === null) {
                     completeDayOneQuiz(quizCorrectAnswers);
                 }
@@ -334,7 +340,11 @@ if (challengeButton && challengesSection) {
                     if (question.nextStep !== null) {
                         showStep(question.nextStep);
                     } else {
-                        showQuizResult(quizCorrectAnswers);
+                        const progress = getProgress();
+
+                        showQuizResult(
+                            progress.dayOneQuizCorrectAnswers
+                        );
                     }
                 }, 1500);
             });
@@ -393,10 +403,8 @@ if (challengeButton && challengesSection) {
         if (progress.dayOneQuizCompleted) {
             showQuizResult(progress.dayOneQuizCorrectAnswers, false);
         } else if (progress.dayOneCompleted) {
-            // Billedet er allerede godkendt: vis quiztilbuddet.
             showStep(4, false);
         } else {
-            // Ingen gennemført challenge: start fra begyndelsen.
             showStep(1, false);
         }
 
@@ -405,6 +413,14 @@ if (challengeButton && challengesSection) {
         document.documentElement.classList.add(
             "challenge-modal-open"
         );
+
+        // Gør det gemte resultat til det første, der læses ved genåbning.
+        if (
+            progress.dayOneQuizCompleted &&
+            progress.dayOneQuizCorrectAnswers !== 3
+        ) {
+            title.focus({ preventScroll: true });
+        }
     });
 
 
@@ -497,6 +513,15 @@ if (challengeButton && challengesSection) {
             ) {
                 showStep(9);
             }
+        });
+    }
+
+
+    /* FORSTÅET VED FÆRRE END TRE RIGTIGE */
+
+    if (failedCloseButton) {
+        failedCloseButton.addEventListener("click", () => {
+            modal.close();
         });
     }
 
