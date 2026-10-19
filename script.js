@@ -513,4 +513,37 @@ if (challengeButton && challengesSection) {
             ) {
                 showStep(9);
             }
-   
+        });
+    }
+
+
+    /* FORSTÅET VED FÆRRE END TRE RIGTIGE */
+
+    if (failedCloseButton) {
+        failedCloseButton.addEventListener("click", () => {
+            modal.close();
+        });
+    }
+
+
+    /* LUK VIA KRYDSET */
+
+    closeButton.addEventListener("click", () => {
+        modal.close();
+    });
+
+
+    /* OPRYDNING VED LUKNING */
+
+    modal.addEventListener("close", () => {
+        clearTimeout(quizTransitionTimer);
+        quizTransitionTimer = null;
+
+        document.documentElement.classList.remove(
+            "challenge-modal-open"
+        );
+
+        clearPhoto();
+        dayOneButton.focus({ preventScroll: true });
+    });
+})();
