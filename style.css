@@ -3,6 +3,38 @@
    1. DESIGNSYSTEM
 ======================================== */
 
+@font-face {
+    font-family: "Campton";
+    src: url("./assets/fonts/CamptonBook.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Campton";
+    src: url("./assets/fonts/CamptonMedium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Campton";
+    src: url("./assets/fonts/CamptonSemiBold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Campton";
+    src: url("./assets/fonts/CamptonBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --color-background: #FFFFFF;
     --color-text: #1C1E23;
