@@ -24,7 +24,7 @@
         "#challenge-intro-next"
     );
 
-    const backButton = intro.querySelector(
+    const secondaryButton = intro.querySelector(
         "#challenge-intro-back"
     );
 
@@ -45,7 +45,6 @@
             panel.hidden = Number(panel.dataset.introStep) !== step;
         });
 
-        // Prikkerne viser, hvor langt brugeren er kommet.
         dots.forEach((dot, index) => {
             dot.classList.toggle(
                 "challenge-intro__dot--active",
@@ -71,7 +70,6 @@
         if (progress.challengeIntroSeen || intro.open) return;
 
         showIntroStep(1, false);
-
         intro.showModal();
 
         document.documentElement.classList.add(
@@ -81,19 +79,11 @@
         title.focus({ preventScroll: true });
     }
 
-    nextButton.addEventListener("click", () => {
-        showIntroStep(2);
-    });
-
-    backButton.addEventListener("click", () => {
-        showIntroStep(1);
-    });
-
-    finishButton.addEventListener("click", () => {
+    function finishIntro() {
         const progress = getProgress();
 
-        // Gemmes i samme objekt som point og streak.
-        // Profilens nulstilling sletter derfor også denne værdi.
+        // Begge knapper registrerer introduktionen som gennemført.
+        // Nulstilling fra profilen nulstiller også denne værdi.
         progress.challengeIntroSeen = true;
 
         try {
@@ -102,14 +92,21 @@
                 JSON.stringify(progress)
             );
         } catch {
-            // Introduktionen kan stadig lukkes, hvis browseren
-            // ikke tillader lagring. Den kan da blive vist igen.
+            // Introduktionen kan stadig lukkes uden lagring.
         }
 
+        // Challenge-siden ligger allerede bag introduktionen.
         intro.close();
+    }
+
+    nextButton.addEventListener("click", () => {
+        showIntroStep(2);
     });
 
-    // Introduktionen afsluttes via "Start challenge".
+    finishButton.addEventListener("click", finishIntro);
+    secondaryButton.addEventListener("click", finishIntro);
+
+    // Introduktionen afsluttes med en af de to knapper.
     intro.addEventListener("cancel", (event) => {
         event.preventDefault();
     });
@@ -124,7 +121,6 @@
         }
     });
 
-    // Kører også, hvis siden gendannes via browserens tilbageknap.
     window.addEventListener("pageshow", openIntroIfNeeded);
 
     openIntroIfNeeded();
